@@ -1,0 +1,20 @@
+/* Paleta accesible (WCAG AA) */
+/* Variables:
+    --bg: fondo de la UI
+    --text: color principal de texto (sobre --bg)
+    --primary: color de botón/foco/acción
+    --primary-contrast: color del texto/ícono sobre --primary
+
+    Ratios esperados (aprox):
+    - fondo (--bg) vs texto (--text): #FFFFFF vs #0f172a ≈ 15:1 → cumple AA (y AAA) para texto normal.
+    - botón (--primary) vs texto del botón (--primary-contrast): #1d4ed8 vs #ffffff ≈ 6:1 → cumple AA (>=4.5:1).
+    - Para texto grande (≥18pt o ≥14pt negrita) el requisito es ≥3:1; estas combinaciones también superan ese umbral.
+*/
+
+/* Paleta */
+:root {
+  --bg: #ffffff;               /* fondo */
+  --text: #0f172a;             /* texto principal (sobre --bg) */
+  --primary: #1d4ed8;          /* color primario (botones, enlaces, acciones) */
+  --primary-contrast: #ffffff; /* texto/íconos sobre --primary */
+}
