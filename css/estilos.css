@@ -13,11 +13,19 @@
 
 /* Paleta */
 :root {
-  --bg: #ffffff;               /* fondo */
+  --bg: lightblue;               /* fondo */
   --text: #0f172a;             /* texto principal (sobre --bg) */
-  --primary: #1d4ed8;          /* color primario (botones, enlaces, acciones) */
+  --primary: rgb(114, 20, 114);          /* color primario (botones, enlaces, acciones) */
   --primary-contrast: #ffffff; /* texto/íconos sobre --primary */
 }
 img {
   width: 300px;
+}
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+button {
+  background-color: var(--primary);
+  color: var(--primary-contrast);
 }
