@@ -10,22 +10,139 @@
     - botón (--primary) vs texto del botón (--primary-contrast): #1d4ed8 vs #ffffff ≈ 6:1 → cumple AA (>=4.5:1).
     - Para texto grande (≥18pt o ≥14pt negrita) el requisito es ≥3:1; estas combinaciones también superan ese umbral.
 */
+/* Estilos para librería - Botones y tarjetas de libros */
 
-/* Paleta */
 :root {
-  --bg: lightblue;               /* fondo */
-  --text: #0f172a;             /* texto principal (sobre --bg) */
-  --primary: rgb(114, 20, 114);          /* color primario (botones, enlaces, acciones) */
-  --primary-contrast: #ffffff; /* texto/íconos sobre --primary */
-}
-img {
-  width: 300px;
+  --bg: #1e293b;
+  --text: #f8fafc;
+  --primary: #3b82f6;
+  --primary-contrast: #ffffff;
 }
 body {
-    background-color: var(--bg);
-    color: var(--text);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #0f172a;
+  color: var(--text);
 }
+header,
+main,
+footer {
+  width: 100%;
+  max-width: 1200px;
+}
+section {
+  padding: 24px 20px;
+}
+.lista-ofertas,
+.lista-disponibles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.lista-ofertas li,
+.lista-disponibles li {
+  margin: 0;
+}
+.libro-card {
+  background: var(--bg);
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.libro-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.libro-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.libro-titulo {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.libro-autor {
+  color: var(--primary);
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.libro-precio {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--primary);
+  margin: 15px 0;
+}
+
 button {
   background-color: var(--primary);
   color: var(--primary-contrast);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  width: 100%;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.contact-form {
+  margin-top: 24px;
+  display: grid;
+  gap: 12px;
+  max-width: 500px;
+}
+
+.contact-form h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.contact-form label {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: var(--text);
+  font: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 3px solid rgba(29, 78, 216, 0.25);
+  border-color: var(--primary);
 }
