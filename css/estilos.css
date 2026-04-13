@@ -11,21 +11,162 @@
     - Para texto grande (≥18pt o ≥14pt negrita) el requisito es ≥3:1; estas combinaciones también superan ese umbral.
 */
 
-/* Paleta */
 :root {
-  --bg: lightblue;               /* fondo */
-  --text: #0f172a;             /* texto principal (sobre --bg) */
-  --primary: rgb(114, 20, 114);          /* color primario (botones, enlaces, acciones) */
-  --primary-contrast: #ffffff; /* texto/íconos sobre --primary */
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --primary: #1d4ed8;
+  --primary-contrast: #ffffff;
 }
-img {
-  width: 300px;
-}
+
 body {
-    background-color: var(--bg);
-    color: var(--text);
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
 }
+
+header.site-header {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  color: #ffffff;
+  padding: 20px 24px;
+}
+
+header.site-header .site-title {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+
+.main-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1120px;
+  margin: -16px auto 0;
+  padding: 24px;
+}
+
+section {
+  margin-bottom: 32px;
+}
+
+section h2 {
+  margin-top: 0;
+  color: var(--primary);
+}
+
+.lista-ofertas,
+.lista-disponibles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.portada-libro {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  object-fit: cover;
+}
+
+footer {
+  background-color: #0f172a;
+  color: #f8fafc;
+  padding: 24px;
+}
+
+footer a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus-visible {
+  text-decoration: underline;
+}
+
 button {
+  font: inherit;
+}
+
+/* Estilos especiales para página de venta de libros */
+
+.book-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.book-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--primary);
+  margin: 12px 0;
+}
+
+.book-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary);
+  margin: 8px 0;
+}
+
+.btn-buy {
+  background-color: var(--primary);
+  color: var(--primary-contrast);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.btn-buy:hover {
+  opacity: 0.9;
+  background-color: #5a1a5a;
+}
+
+.btn-wishlist {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-wishlist:hover {
   background-color: var(--primary);
   color: var(--primary-contrast);
 }
